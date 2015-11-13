@@ -7,11 +7,11 @@ function range(start, limit, step) {
     return rangeArray;
 }
 
-function isNotNull(value) {
-    if (value !== null)
-        return true;
-    else
+function isNull(value) {
+    if (value === null)
         return false;
+    else
+        return true;
 }
 
 function nullMultiples(multiple, array) {
@@ -25,14 +25,14 @@ function nullMultiples(multiple, array) {
 function nextPrime(currentPrime, array) {
     var successor = currentPrime++;
     while (true) {
-        if (array[successor] !== null)
-            return successor;
-        else
+        if (array[successor] === null)
             successor++;
+        else
+            return successor;
     }
 }
 
-var primes = function(below) {
+function primes(below) {
    var initSet = range(0, below, 1);
    var primeSet = [];
    var currentPrime = initSet[2];
@@ -41,5 +41,5 @@ var primes = function(below) {
        nullMultiples(currentPrime, initSet);
        currentPrime = nextPrime(currentPrime, initSet);
    }
-   return primeSet.concat(initSet.filter(isNotNull));
-};
+   return primeSet.concat(initSet.slice(2).filter(isNull));
+}
