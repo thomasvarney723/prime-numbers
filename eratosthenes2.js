@@ -18,15 +18,15 @@ function isNotNull(value) { // predicate for filtering
 }
 
 function nullMultiples(multiple, array) { // mutates array
-    var step = multiple;
-    while (multiple < array.length) {
-        array[multiple] = null;
-        multiple = multiple + step;
+    var step = multiple + multiple;
+    while (step < array.length) {
+        array[step] = null;
+        step = step + multiple;
     }
 }
 
 function nextPrime(currentPrime, array) {
-    var successor = currentPrime++;
+    var successor = currentPrime + 1;
     while (array[successor] === null)
         successor++;
     return successor;
@@ -34,14 +34,11 @@ function nextPrime(currentPrime, array) {
 
 function primes(below) {
    var initSet = range(0, below, 1);
-   var primeSet = []; // set of numbers used as a multiple
    var currentPrime = initSet[2]; // the first multiple is 2
    while (currentPrime < Math.sqrt(initSet.length)) {
-       primeSet.push(currentPrime);
        nullMultiples(currentPrime, initSet); // mutate initSet
        currentPrime = nextPrime(currentPrime, initSet); 
    }
-   // return the numbers that were used as multiples and all
-   // inidicies that still contain a number, except 0 and 1
-   return primeSet.concat(initSet.slice(2).filter(isNotNull));
+   // return inidicies that still contain a number, except 0 and 1
+   return initSet.slice(2).filter(isNotNull);
 }
