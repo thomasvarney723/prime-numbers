@@ -17,8 +17,8 @@ function isNotNull(value) { // predicate for filtering
         return false;
 }
 
-function nullMultiples(multiple, array) { // starts at multiple^2
-    var step = multiple * multiple;
+function nullMultiples(multiple, array) { // mutates array
+    var step = multiple * multiple; // starts at multiple^2  
     while (step < array.length) {
         array[step] = null;
         step = step + multiple;
