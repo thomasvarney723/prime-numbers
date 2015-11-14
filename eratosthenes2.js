@@ -23,7 +23,7 @@ function nullMultiples(multiple, array) { // mutates array
     var step = multiple;
     while(multiple < array.length) {
         array[multiple] = null;
-        multiple = step + multiple;
+        multiple = multiple + step;
     }
 }
 
