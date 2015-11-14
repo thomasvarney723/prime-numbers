@@ -29,9 +29,8 @@ function nullMultiples(multiple, array) { // mutates array
 
 function nextPrime(currentPrime, array) {
     var successor = currentPrime++;
-    while (array[successor] === null) {
+    while (array[successor] === null)
         successor++;
-    }
     return successor;
 }
 
