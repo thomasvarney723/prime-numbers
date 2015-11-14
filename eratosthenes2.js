@@ -5,10 +5,8 @@
 
 function range(start, limit, step) {
     var rangeArray = [];
-    while(start < limit) {
-        rangeArray.push(start);
-        start = start + step;
-    }
+    for (var i = start; i < limit; i += step)
+        rangeArray.push(i);
     return rangeArray;
 }
 
@@ -21,7 +19,7 @@ function isNotNull(value) { // predicate for filtering
 
 function nullMultiples(multiple, array) { // mutates array
     var step = multiple;
-    while(multiple < array.length) {
+    while (multiple < array.length) {
         array[multiple] = null;
         multiple = multiple + step;
     }
