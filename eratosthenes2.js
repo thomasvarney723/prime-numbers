@@ -11,10 +11,7 @@ function range(start, limit, step) {
 }
 
 function isNotNull(value) { // predicate for filtering
-    if (value !== null)
-        return true;
-    else
-        return false;
+    return value !== null;
 }
 
 function nullMultiples(multiple, array) { // mutates array
