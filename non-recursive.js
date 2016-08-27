@@ -10,9 +10,8 @@ function primesLessThan(n) {
 
 function range(start, end, step) {
     var result = [];
-    for(var i = start; i < end; i += step) {
+    for(var i = start; i < end; i += step)
 	result.push(i);
-    }
     return result;
 }
 
