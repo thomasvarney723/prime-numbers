@@ -1,9 +1,9 @@
 function primesLessThan(n) {
     var composites = range(3, Math.sqrt(n), 2)
-	.map(function(x) {
+    .map(function(x) {
 	    return range(x * x, n, x);
 	})
-	.reduce(concat);
+    .reduce(concat);
     var data = [2].concat(range(3, n, 2));
     return data.filter(doesNotContain(composites));
 }
@@ -21,6 +21,6 @@ function concat(a, b) {
 
 function doesNotContain(arr) {
     return function(elem) {
-	return !arr.includes(elem);
+	return !(arr.indexOf(elem) > -1);
     };
 }
