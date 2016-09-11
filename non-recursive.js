@@ -21,6 +21,6 @@ function concat(a, b) {
 
 function doesNotContain(arr) {
     return function(elem) {
-	return !(arr.indexOf(elem) > -1);
+	return !arr.includes(elem);
     };
 }
