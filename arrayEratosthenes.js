@@ -1,4 +1,3 @@
-B
 function primesLessThan(n) {
     if(typeof n !== 'number' || n < 0)
 	throw new Error('Argument must be a non-negative integer.');
