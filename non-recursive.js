@@ -3,7 +3,7 @@ function primesLessThan(n) {
     .map(function(x) {
 	    return range(x * x, n, x);
 	})
-    .reduce(concat);
+    .reduce(concat, []);
     var data = [2].concat(range(3, n, 2));
     return data.filter(doesNotContain(composites));
 }
