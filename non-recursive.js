@@ -1,4 +1,7 @@
 function primesLessThan(n) {
+    if(n <= 2)
+	return [];
+
     var composites = range(3, Math.sqrt(n), 2)
     .map(function(x) {
 	    return range(x * x, n, x);
