@@ -1,4 +1,4 @@
-;; include mori CDN
+//include mori CDN
 var m = mori;
 
 function primesLessThan(n) {
