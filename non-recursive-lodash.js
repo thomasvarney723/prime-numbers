@@ -1,3 +1,5 @@
+//incldue lodash CDN
+
 function primesLessThan(n) {
     if(n <= 2)
 	return [];
