@@ -2,6 +2,9 @@
 var i = Immutable;
 
 function primesLessThan(n) {
+    if(n <= 2)
+	return [];
+
     var oddsAnd2 = i.OrderedSet([2]).concat(i.Range(3, n, 2));
     function multiplesOf(o) {
 	return i.Range(o * o, n, o);
