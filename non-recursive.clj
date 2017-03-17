@@ -2,6 +2,8 @@
   (if (<= n 2)
     ()
     (remove (into #{}
-                  (mapcat #(range (* % %) n %))
+                  (comp
+                   (mapcat #(range (* % %) n %))
+                   (remove even?))
                   (range 3 (Math/sqrt n) 2))
             (cons 2 (range 3 n 2)))))
