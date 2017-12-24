@@ -2,7 +2,7 @@ function primesLessThan(n) {
     if(typeof n !== 'number' || n < 0)
 	throw new Error('Argument must be a non-negative integer.');
     
-    var intArr = Array(n);
+    var intArr = Array(n);  // array of 'undefined's of length n
     
     intArr[0] = intArr[1] = false;  // 0 and 1 are not primes
     
